@@ -11,6 +11,10 @@ const SHOTS = [
   { cat: "campus", src: "/images/function2.jpeg", title: "Science Exhibition", caption: "Class VII project display", alt: "Class VII students with their science exhibition models and the principal" },
   { cat: "celebration", src: "/images/resultDay.jpeg", title: "Result Day Celebration", caption: "With parents", alt: "A student and parent receiving a certificate on Result Day" },
   { cat: "campus", src: "/images/books.jpeg", title: "Books & study material", caption: "School stock room", alt: "Shelves stacked with textbooks and workbooks" },
+  { cat: "cultural", src: "/images/function3.jpeg", title: "Independence Day", caption: "Tricolour sashes and rosettes", alt: "A group of students wearing tricolour sashes on Independence Day", tall: true },
+  { cat: "cultural", src: "/images/function7.jpeg", title: "Cultural Programme", caption: "A dance duet on stage", alt: "Two students in traditional dress performing a dance duet on stage" },
+  { cat: "celebration", src: "/images/resultDay2.jpeg", title: "Result Day Celebration", caption: "Prize giving", alt: "A student receiving a prize and certificate on Result Day" },
+  { cat: "celebration", src: "/images/1.jpeg", title: "Result Day Celebration", caption: "Graduation moment", alt: "A student in a graduation cap receiving a certificate from a teacher", tall: true },
 ];
 
 export default function Life() {

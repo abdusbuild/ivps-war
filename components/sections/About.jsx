@@ -50,7 +50,7 @@ export default function About() {
             </li>
           </ul>
 
-          <a className="link-arrow reveal" data-reveal="up" data-delay="420" href="#academics" data-cursor="link">
+          <a className="link-arrow reveal" data-reveal="up" data-delay="420" href="/academics" data-cursor="link">
             Explore the academic journey
             <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /></svg>
           </a>

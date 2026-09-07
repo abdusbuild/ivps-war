@@ -55,7 +55,7 @@ export default function Campus() {
             <div className="bento__body">
               <h3>An excellent transport system</h3>
               <p>A maintained fleet on fixed routes across War and the surrounding villages, with named staff on every vehicle.</p>
-              <a className="link-arrow link-arrow--sm" href="#contact" data-cursor="link">Ask about your route
+              <a className="link-arrow link-arrow--sm" href="/contact" data-cursor="link">Ask about your route
                 <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /></svg>
               </a>
             </div>

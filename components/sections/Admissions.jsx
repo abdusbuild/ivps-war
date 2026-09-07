@@ -37,7 +37,7 @@ export default function Admissions() {
             <p>Nursery, LKG and UKG fill first. If you are considering a mid-session transfer, call before you visit.</p>
           </div>
           <div className="admissions__btns">
-            <a className="btn btn--gold btn--lg magnetic" href="#contact" data-cursor="link"><span>Fill the enquiry form</span></a>
+            <a className="btn btn--gold btn--lg magnetic" href="/contact" data-cursor="link"><span>Fill the enquiry form</span></a>
             <a className="btn btn--outline-light btn--lg magnetic" href="tel:+916207417770" data-cursor="link"><span>Call 6207 417 770</span></a>
           </div>
         </div>

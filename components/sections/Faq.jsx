@@ -22,7 +22,7 @@ const FAQS = [
   },
   {
     q: "How do I apply?",
-    a: "Start with the enquiry form on this page or a phone call. We will invite you for a campus visit, hold a short age-appropriate interaction with your child, and then share the admission form, document list and fee structure.",
+    a: "Start with the enquiry form on our contact page or a phone call. We will invite you for a campus visit, hold a short age-appropriate interaction with your child, and then share the admission form, document list and fee structure.",
   },
 ];
 

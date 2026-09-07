@@ -6,7 +6,7 @@ export default function Footer() {
       <div className="wrap">
         <div className="footer__top">
           <div className="footer__brand">
-            <a className="brand brand--light" href="#top">
+            <a className="brand brand--light" href="/">
               <span className="brand__mark">
                 <Image src="/images/logo.jpeg" alt="Indo Valley Public School crest" width={40} height={40} />
               </span>
@@ -23,20 +23,21 @@ export default function Footer() {
 
           <div className="footer__col">
             <h4>Explore</h4>
-            <a href="#about">About us</a>
-            <a href="#academics">Academics</a>
-            <a href="#campus">Campus &amp; facilities</a>
-            <a href="#life">School life</a>
-            <a href="#news">News &amp; events</a>
+            <a href="/about">About us</a>
+            <a href="/academics">Academics</a>
+            <a href="/campus">Campus &amp; facilities</a>
+            <a href="/life">School life</a>
+            <a href="/faculty">Faculty</a>
+            <a href="/#news">News &amp; events</a>
           </div>
 
           <div className="footer__col">
             <h4>For parents</h4>
-            <a href="#admissions">Admissions</a>
-            <a href="#faq">Fees &amp; rules</a>
-            <a href="#contact">Transport routes</a>
-            <a href="#leaders">Leadership</a>
-            <a href="#contact">Contact the office</a>
+            <a href="/admissions">Admissions</a>
+            <a href="/#faq">Fees &amp; rules</a>
+            <a href="/contact">Transport routes</a>
+            <a href="/about#leaders">Leadership</a>
+            <a href="/contact">Contact the office</a>
           </div>
 
           <div className="footer__col footer__col--contact">

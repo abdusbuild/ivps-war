@@ -1,8 +1,13 @@
 import { Fraunces, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import Preloader from "@/components/Preloader";
-import CustomCursor from "@/components/CustomCursor";
 import ClientInteractions from "@/components/ClientInteractions";
+import TopBar from "@/components/TopBar";
+import Nav from "@/components/Nav";
+import MobileMenu from "@/components/MobileMenu";
+import Footer from "@/components/Footer";
+import FloatingActions from "@/components/FloatingActions";
+import Lightbox from "@/components/Lightbox";
 
 const fraunces = Fraunces({
   subsets: ["latin"],
@@ -44,12 +49,17 @@ export default function RootLayout({ children }) {
     <html lang="en" data-theme="light" suppressHydrationWarning>
       <body className={`${fraunces.variable} ${jakarta.variable}`}>
         <Preloader />
-        <CustomCursor />
         <div className="grain" aria-hidden="true" />
         <a className="skip-link" href="#main">
           Skip to main content
         </a>
+        <TopBar />
+        <Nav />
+        <MobileMenu />
         {children}
+        <Footer />
+        <FloatingActions />
+        <Lightbox />
         <ClientInteractions />
       </body>
     </html>

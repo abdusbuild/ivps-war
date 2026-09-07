@@ -48,30 +48,6 @@ export default function ClientInteractions() {
     /* ── Year ──────────────────────────────────────────────── */
     var y = $("#year"); if (y) y.textContent = new Date().getFullYear();
 
-    /* ── Custom cursor ─────────────────────────────────────── */
-    if (FINE && !REDUCED) {
-      var cur = $("#cursor");
-      var dot = $(".cursor__dot", cur);
-      var ring = $(".cursor__ring", cur);
-      var mx = window.innerWidth / 2, my = window.innerHeight / 2;
-      var rx = mx, ry = my;
-
-      document.addEventListener("mousemove", function (e) { mx = e.clientX; my = e.clientY; });
-      (function loop() {
-        rx += (mx - rx) * 0.16;
-        ry += (my - ry) * 0.16;
-        if (dot) dot.style.transform = "translate3d(" + mx + "px," + my + "px,0)";
-        if (ring) ring.style.transform = "translate3d(" + rx + "px," + ry + "px,0)";
-        requestAnimationFrame(loop);
-      })();
-
-      document.addEventListener("mouseover", function (e) {
-        var t = e.target.closest("[data-cursor]");
-        cur.classList.remove("is-link", "is-card", "is-zoom");
-        if (t) cur.classList.add("is-" + t.getAttribute("data-cursor"));
-      });
-    }
-
     /* ── Magnetic buttons ──────────────────────────────────── */
     if (FINE && !REDUCED) {
       $$(".magnetic").forEach(function (el) {
@@ -213,12 +189,11 @@ export default function ClientInteractions() {
       window.addEventListener("resize", size);
     })();
 
-    /* ── Nav: stuck state, progress, active link, pill ─────── */
+    /* ── Nav: stuck state, progress, pill ──────────────────── */
     var nav = $("#nav");
     var navProgress = $("#navProgress");
     var toTop = $("#toTop");
     var toTopRing = $("#toTopProgress");
-    var sections = $$("main section[id]");
     var navLinks = $$("#navMenu a");
 
     function onScroll() {
@@ -233,14 +208,6 @@ export default function ClientInteractions() {
         toTop.classList.toggle("is-on", sc > 500);
         if (toTopRing) toTopRing.style.strokeDashoffset = String(126 - 126 * pct);
       }
-
-      var current = "";
-      sections.forEach(function (s) {
-        if (s.getBoundingClientRect().top <= 140) current = s.id;
-      });
-      navLinks.forEach(function (a) {
-        a.classList.toggle("is-active", a.getAttribute("href") === "#" + current);
-      });
 
       $$("[data-parallax]").forEach(function (el) {
         var r = el.getBoundingClientRect();

@@ -70,7 +70,7 @@ export default function Academics() {
             <h3>How we teach</h3>
             <p>Constructivist rather than rote — hands-on experience first. Critical and creative thinking, aligned to 21st-century skills, is built into ordinary classroom practice rather than added on as a workshop.</p>
           </div>
-          <a className="btn btn--dark magnetic" href="#contact" data-cursor="link"><span>Request the curriculum outline</span></a>
+          <a className="btn btn--dark magnetic" href="/contact" data-cursor="link"><span>Request the curriculum outline</span></a>
         </div>
       </div>
     </section>
