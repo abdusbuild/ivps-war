@@ -1,17 +1,18 @@
-import Image from "next/image";
+﻿import Image from "next/image";
+import Link from "next/link";
 
 export default function Campus() {
   return (
-    <section className="section campus" id="campus">
-      <div className="wrap">
+    <section className="py-[clamp(48px,6vw,90px)] relative" id="campus">
+      <div className="w-full max-w-(--container-wrap) mx-auto px-[clamp(20px,4vw,40px)]">
         <header className="sec-head">
-          <p className="eyebrow reveal" data-reveal="up"><span className="eyebrow__dot"></span> Campus &amp; facilities</p>
-          <h2 className="h2 split" data-reveal="split">Spaces designed to keep children learning</h2>
+          <p className="eyebrow reveal" data-reveal="up">Campus &amp; facilities</p>
+          <h2 className="text-[clamp(30px,4.6vw,54px)] split" data-reveal="split">Spaces designed to keep children learning</h2>
         </header>
 
-        <div className="bento">
+        <div className="bento grid grid-cols-3 gap-4.5 [grid-auto-rows:minmax(200px,auto)] max-[1080px]:grid-cols-2 max-[640px]:grid-cols-1">
           <article className="bento__card bento__card--tall tilt reveal" data-reveal="up" data-cursor="card">
-            <Image src="/images/classroom2.jpeg" alt="A classroom at Indo Valley Public School" width={900} height={1200} />
+            <Image src="/indo/classroom2.jpeg" alt="A classroom at Indo Valley Public School" width={900} height={1200} />
             <div className="bento__body">
               <h3>Bright, low-noise classrooms</h3>
               <p>Classrooms, laboratories and activity spaces are laid out to raise productivity and shield students from excessive noise and pollution.</p>
@@ -51,13 +52,13 @@ export default function Campus() {
           </article>
 
           <article className="bento__card bento__card--wide tilt reveal" data-reveal="up" data-delay="120" data-cursor="card">
-            <Image src="/images/vehicles.jpeg" alt="The Indo Valley Public School transport fleet parked at the depot" width={1280} height={310} />
+            <Image src="/indo/vehicles.jpeg" alt="The Indo Valley Public School transport fleet parked at the depot" width={1280} height={310} />
             <div className="bento__body">
               <h3>An excellent transport system</h3>
               <p>A maintained fleet on fixed routes across War and the surrounding villages, with named staff on every vehicle.</p>
-              <a className="link-arrow link-arrow--sm" href="/contact" data-cursor="link">Ask about your route
+              <Link className="link-arrow link-arrow--sm" href="/contact" data-cursor="link">Ask about your route
                 <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /></svg>
-              </a>
+              </Link>
             </div>
           </article>
 

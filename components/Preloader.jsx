@@ -1,27 +1,38 @@
+import Image from "next/image";
+
 export default function Preloader() {
   return (
     <div className="preloader" id="preloader" aria-hidden="true">
+      <div className="preloader__glow" />
       <div className="preloader__inner">
-        <svg className="preloader__mark" viewBox="0 0 100 100" fill="none" aria-hidden="true">
-          <path
-            className="pl-shield"
-            d="M50 6 L88 20 V50 C88 72 71 88 50 95 C29 88 12 72 12 50 V20 Z"
-            stroke="currentColor"
-            strokeWidth="3"
-            strokeLinejoin="round"
-          />
-          <path
-            className="pl-valley"
-            d="M26 62 L40 40 L50 54 L62 32 L76 62"
-            stroke="currentColor"
-            strokeWidth="4.5"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
-        </svg>
-        <div className="preloader__word">
-          <span>Indo</span> <span>Valley</span>
+        <div className="preloader__mark">
+          <span className="preloader__ring preloader__ring--outer"></span>
+          <span className="preloader__ring preloader__ring--inner"></span>
+          <span className="preloader__logo-frame">
+            <Image
+              src="/indo/logo.png"
+              alt="Indo Valley Public School crest"
+              width={220}
+              height={220}
+              priority
+              className="preloader__logo"
+            />
+          </span>
         </div>
+
+        <div className="preloader__word">
+          <div className="preloader__word-row">
+            <span>Indo</span>
+            <span>Valley</span>
+          </div>
+          <div className="preloader__word-row preloader__word-row--sub">
+            <span>Public</span>
+            <span>School</span>
+          </div>
+        </div>
+
+        <div className="preloader__tag">English Medium &middot; CBSE</div>
+
         <div className="preloader__bar">
           <i></i>
         </div>

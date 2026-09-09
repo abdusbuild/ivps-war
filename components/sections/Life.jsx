@@ -1,30 +1,26 @@
-import Image from "next/image";
+﻿import Image from "next/image";
 
 const SHOTS = [
-  { cat: "celebration", src: "/images/resultDay1.jpeg", title: "Result Day Celebration", caption: "Graduation moment", alt: "A young student in a graduation cap receiving a certificate on Result Day" },
-  { cat: "cultural", src: "/images/function8.jpeg", title: "Classical Dance", caption: "Independence Day programme", alt: "A student performing a classical dance on stage", tall: true },
-  { cat: "campus", src: "/images/function1.jpeg", title: "Science Exhibition", caption: "Class III-A project display", alt: "Students presenting science exhibition models" },
-  { cat: "celebration", src: "/images/independenceDay.jpeg", title: "Flag Hoisting", caption: "15 August", alt: "Staff and guests gathered for the Independence Day flag hoisting", tall: true },
-  { cat: "cultural", src: "/images/function6.jpeg", title: "Ethnic Day", caption: "Saree walk, senior girls", alt: "Senior students dressed in sarees for Ethnic Day" },
-  { cat: "celebration", src: "/images/GK-competition.jpeg", title: "GK Quiz Competition", caption: "Prize distribution", alt: "A student receiving a prize at the General Knowledge quiz competition" },
-  { cat: "campus", src: "/images/hall.jpeg", title: "School corridor", caption: "Main block", alt: "A corridor inside the Indo Valley Public School building" },
-  { cat: "campus", src: "/images/function2.jpeg", title: "Science Exhibition", caption: "Class VII project display", alt: "Class VII students with their science exhibition models and the principal" },
-  { cat: "celebration", src: "/images/resultDay.jpeg", title: "Result Day Celebration", caption: "With parents", alt: "A student and parent receiving a certificate on Result Day" },
-  { cat: "campus", src: "/images/books.jpeg", title: "Books & study material", caption: "School stock room", alt: "Shelves stacked with textbooks and workbooks" },
-  { cat: "cultural", src: "/images/function3.jpeg", title: "Independence Day", caption: "Tricolour sashes and rosettes", alt: "A group of students wearing tricolour sashes on Independence Day", tall: true },
-  { cat: "cultural", src: "/images/function7.jpeg", title: "Cultural Programme", caption: "A dance duet on stage", alt: "Two students in traditional dress performing a dance duet on stage" },
-  { cat: "celebration", src: "/images/resultDay2.jpeg", title: "Result Day Celebration", caption: "Prize giving", alt: "A student receiving a prize and certificate on Result Day" },
-  { cat: "celebration", src: "/images/1.jpeg", title: "Result Day Celebration", caption: "Graduation moment", alt: "A student in a graduation cap receiving a certificate from a teacher", tall: true },
+  { cat: "campus", src: "/indo/science-Exhibition.jpeg", title: "Science Exhibition", caption: "Project display", alt: "Students presenting science exhibition models with their teachers" },
+  { cat: "cultural", src: "/indo/girl-performing-dance.jpeg", title: "Classical Dance", caption: "Independence Day programme", alt: "A student performing a classical dance on stage", tall: true },
+  { cat: "celebration", src: "/indo/republicDay.jpeg", title: "Flag Hoisting", caption: "15 August", alt: "Staff and students gathered for the Independence Day flag hoisting" },
+  { cat: "cultural", src: "/indo/function1.jpeg", title: "Ethnic Day", caption: "Saree walk, senior girls", alt: "Senior students dressed in sarees for Ethnic Day" },
+  { cat: "celebration", src: "/indo/certi-distribution.jpeg", title: "Prize Distribution", caption: "Sports & games day", alt: "A student receiving a prize certificate on stage" },
+  { cat: "campus", src: "/indo/hall.jpeg", title: "School corridor", caption: "Main block", alt: "A corridor inside the Indo Valley Public School building" },
+  { cat: "campus", src: "/indo/books.jpeg", title: "Books & study material", caption: "School stock room", alt: "Shelves stacked with textbooks and workbooks" },
+  { cat: "cultural", src: "/indo/anualFunction.jpeg", title: "Annual Function", caption: "Cultural programme", alt: "Students performing at the school's annual function" },
+  { cat: "celebration", src: "/indo/result-distribution.jpeg", title: "Result Day Celebration", caption: "Certificate distribution", alt: "A student receiving a certificate from staff on Result Day" },
+  { cat: "celebration", src: "/indo/independenceDay-performing.jpeg", title: "Independence Day", caption: "Tricolour stage performance", alt: "A group of students in tricolour outfits on stage for Independence Day", tall: true },
 ];
 
 export default function Life() {
   return (
-    <section className="section life" id="life">
-      <div className="wrap">
+    <section className="py-[clamp(48px,6vw,90px)] relative" id="life">
+      <div className="w-full max-w-(--container-wrap) mx-auto px-[clamp(20px,4vw,40px)]">
         <header className="sec-head sec-head--split">
           <div>
-            <p className="eyebrow reveal" data-reveal="up"><span className="eyebrow__dot"></span> Life at Indo Valley</p>
-            <h2 className="h2 split" data-reveal="split">Photographs, not stock images</h2>
+            <p className="eyebrow reveal" data-reveal="up">Life at Indo Valley</p>
+            <h2 className="text-[clamp(30px,4.6vw,54px)] split" data-reveal="split">Photographs, not stock images</h2>
           </div>
           <div className="filters reveal" data-reveal="up" data-delay="120" role="tablist" aria-label="Gallery filters">
             <button className="filter is-active" data-filter="all" role="tab" aria-selected="true">All</button>
@@ -36,8 +32,8 @@ export default function Life() {
 
         <div className="gallery" id="gallery">
           <figure className="shot" data-cat="campus" data-reveal="up" data-cursor="zoom">
-            <video src="/video/video.mp4" muted loop playsInline autoPlay preload="metadata" />
-            <figcaption><strong>A look around</strong><span>Campus video</span></figcaption>
+            <video src="/video/video.mp4" muted loop playsInline autoPlay preload="metadata" className="aspect-[4/3] w-full object-cover" />
+            <figcaption><strong className="font-display text-[17px]">A look around</strong><span className="text-xs opacity-80">Campus video</span></figcaption>
           </figure>
           {SHOTS.map((s, i) => (
             <figure
@@ -48,8 +44,8 @@ export default function Life() {
               data-delay={60 + i * 60}
               data-cursor="zoom"
             >
-              <Image src={s.src} alt={s.alt} width={s.tall ? 900 : 1200} height={s.tall ? 1200 : 900} />
-              <figcaption><strong>{s.title}</strong><span>{s.caption}</span></figcaption>
+              <Image src={s.src} alt={s.alt} width={s.tall ? 900 : 1200} height={s.tall ? 1200 : 900} className={s.tall ? "aspect-[3/4] w-full object-cover" : "aspect-[4/3] w-full object-cover"} />
+              <figcaption><strong className="font-display text-[17px]">{s.title}</strong><span className="text-xs opacity-80">{s.caption}</span></figcaption>
             </figure>
           ))}
         </div>

@@ -1,4 +1,5 @@
 import Admissions from "@/components/sections/Admissions";
+import AdmissionsInfo from "@/components/sections/AdmissionsInfo";
 
 export const metadata = {
   title: "Admissions — Indo Valley Public School",
@@ -10,6 +11,7 @@ export default function AdmissionsPage() {
   return (
     <main id="main">
       <Admissions />
+      <AdmissionsInfo />
     </main>
   );
 }

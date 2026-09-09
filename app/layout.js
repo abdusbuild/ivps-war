@@ -8,6 +8,7 @@ import MobileMenu from "@/components/MobileMenu";
 import Footer from "@/components/Footer";
 import FloatingActions from "@/components/FloatingActions";
 import Lightbox from "@/components/Lightbox";
+import WelcomeModal from "@/components/WelcomeModal";
 
 const fraunces = Fraunces({
   subsets: ["latin"],
@@ -35,8 +36,8 @@ export const metadata = {
     type: "website",
   },
   icons: {
-    icon: "/images/logo.jpeg",
-    apple: "/images/logo.jpeg",
+    icon: "/indo/logo.jpeg",
+    apple: "/indo/logo.jpeg",
   },
 };
 
@@ -60,6 +61,7 @@ export default function RootLayout({ children }) {
         <Footer />
         <FloatingActions />
         <Lightbox />
+        <WelcomeModal />
         <ClientInteractions />
       </body>
     </html>

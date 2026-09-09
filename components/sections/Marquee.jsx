@@ -11,10 +11,10 @@ const ITEMS = [
 
 function Set() {
   return (
-    <div className="marquee__set">
+    <div className="marquee__set flex items-center gap-7 pr-7">
       {ITEMS.flatMap((item, i) => [
-        <span key={`s${i}`}>{item}</span>,
-        <i key={`i${i}`}>&#10022;</i>,
+        <span key={`s${i}`} className="font-display text-[clamp(17px,2vw,24px)] font-medium whitespace-nowrap opacity-90">{item}</span>,
+        <i key={`i${i}`} className="text-gold-400 not-italic text-[13px]">&#10022;</i>,
       ])}
     </div>
   );
@@ -22,7 +22,7 @@ function Set() {
 
 export default function Marquee() {
   return (
-    <section className="marquee" id="marquee" aria-hidden="true">
+    <section className="marquee bg-brand-900 text-white overflow-hidden py-4 border-y border-white/8" id="marquee" aria-hidden="true">
       <div className="marquee__track">
         <Set />
         <Set />

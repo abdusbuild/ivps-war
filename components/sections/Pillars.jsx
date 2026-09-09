@@ -1,4 +1,4 @@
-const PILLARS = [
+﻿const PILLARS = [
   {
     icon: <path d="M12 3 2 8l10 5 10-5-10-5z" />,
     icon2: <path d="M6 10.5V16c0 1.7 2.7 3 6 3s6-1.3 6-3v-5.5" />,
@@ -30,24 +30,30 @@ const PILLARS = [
 
 export default function Pillars() {
   return (
-    <section className="section pillars" id="pillars">
-      <div className="wrap">
+    <section className="py-[clamp(48px,6vw,90px)] relative bg-paper-2" id="pillars">
+      <div className="w-full max-w-(--container-wrap) mx-auto px-[clamp(20px,4vw,40px)]">
         <header className="sec-head">
-          <p className="eyebrow reveal" data-reveal="up"><span className="eyebrow__dot"></span> Why families choose us</p>
-          <h2 className="h2 split" data-reveal="split">Four promises we keep every single day</h2>
+          <p className="eyebrow reveal" data-reveal="up">Why families choose us</p>
+          <h2 className="text-[clamp(30px,4.6vw,54px)] split" data-reveal="split">Four promises we keep every single day</h2>
         </header>
 
-        <div className="pillars__grid">
+        <div className="pillars__grid grid grid-cols-4 gap-5 max-[1080px]:grid-cols-2 max-[640px]:grid-cols-1">
           {PILLARS.map((p, i) => (
-            <article className="pillar tilt reveal" data-reveal="up" data-delay={i * 90} data-cursor="card" key={p.title}>
+            <article
+              className="pillar tilt reveal p-[30px_26px_28px] bg-card border border-line-2 rounded-lg"
+              data-reveal="up"
+              data-delay={i * 90}
+              data-cursor="card"
+              key={p.title}
+            >
               <span className="pillar__num">{String(i + 1).padStart(2, "0")}</span>
-              <span className="pillar__icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+              <span className="pillar__icon grid place-items-center w-[50px] h-[50px] rounded-[15px] mb-4.5 bg-[linear-gradient(140deg,var(--brand-700),var(--brand-900))] text-gold-400 shadow-[0_8px_20px_rgba(10,21,47,.22)]">
+                <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
                   {p.icon}{p.icon2}{p.icon3}
                 </svg>
               </span>
-              <h3>{p.title}</h3>
-              <p>{p.text}</p>
+              <h3 className="text-[19.5px] mb-2 relative">{p.title}</h3>
+              <p className="text-[14.5px] text-muted m-0 leading-[1.6] relative">{p.text}</p>
             </article>
           ))}
         </div>
