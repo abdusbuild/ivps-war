@@ -50,18 +50,6 @@ export default function FloatingActions() {
         <span className="enquire-panel__foot">We're here to help! 🎓</span>
       </div>
 
-      <a
-        className="fab fab--whatsapp magnetic"
-        href="https://wa.me/918002730317"
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="Chat with us on WhatsApp"
-        data-cursor="link"
-      >
-        <svg className="w-[17px] h-[17px]" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.28-1.38a9.9 9.9 0 0 0 4.76 1.21h.01c5.46 0 9.9-4.45 9.9-9.92 0-2.65-1.03-5.14-2.9-7.01A9.87 9.87 0 0 0 12.04 2zm5.8 14.1c-.24.68-1.4 1.32-1.93 1.4-.5.08-1.11.11-1.8-.11-.41-.13-.94-.3-1.62-.6-2.86-1.24-4.72-4.12-4.87-4.31-.14-.2-1.17-1.55-1.17-2.96 0-1.4.74-2.09 1-2.38.26-.28.57-.35.76-.35.19 0 .38 0 .55.01.18.01.41-.07.64.49.24.58.81 2 .88 2.14.07.14.12.31.02.5-.09.19-.14.31-.28.48-.14.16-.29.36-.42.48-.14.14-.28.29-.12.56.16.28.71 1.18 1.53 1.91 1.05.94 1.94 1.23 2.21 1.37.28.14.44.12.6-.07.16-.19.68-.79.86-1.06.18-.28.35-.23.6-.14.24.09 1.55.73 1.82.87.26.14.44.2.5.32.07.12.07.68-.17 1.35z" /></svg>
-        <span>WhatsApp</span>
-      </a>
-
       <button
         type="button"
         className="fab fab--call magnetic"

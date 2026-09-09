@@ -756,18 +756,12 @@ html[data-theme="dark"] {
   }
   .fab svg { width: 17px; height: 17px; }
   .fab:hover { transform: translateY(-3px); box-shadow: 0 16px 40px rgba(225, 27, 46, 0.5); }
-  .fab--whatsapp {
-    bottom: 78px;
-    background: linear-gradient(135deg, #25d366, #128c7e);
-    box-shadow: 0 10px 30px rgba(37, 211, 102, 0.4);
-  }
-  .fab--whatsapp:hover { box-shadow: 0 16px 40px rgba(37, 211, 102, 0.5); }
   .fab--call.is-open { transform: translateY(-3px); box-shadow: 0 16px 40px rgba(225, 27, 46, 0.5); }
 
   /* ── Enquire popup ──────────────────────────────────────── */
   .enquire-panel {
     @apply fixed z-90 grid bg-card border border-line-2;
-    left: 22px; bottom: 146px; width: min(300px, calc(100vw - 44px));
+    left: 22px; bottom: 90px; width: min(300px, calc(100vw - 44px));
     padding: 20px 20px 16px; gap: 4px; border-radius: var(--radius-xl);
     box-shadow: var(--shadow-card-lg);
     animation: fade-up 0.3s var(--ease-ivps);
@@ -898,8 +892,7 @@ html[data-theme="dark"] {
     .stage__range { display: none; }
     .fab span { display: none; }
     .fab { padding: 14px; left: 16px; bottom: 16px; }
-    .fab--whatsapp { bottom: 68px; }
-    .enquire-panel { left: 16px; bottom: 128px; }
+    .enquire-panel { left: 16px; bottom: 78px; }
     .totop { right: 16px; bottom: 16px; }
     .hero__bars { display: none; }
     .hero__slider-nav { bottom: 18px; gap: 8px; }
