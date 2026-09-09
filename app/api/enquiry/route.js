@@ -1,7 +1,13 @@
 import { Resend } from "resend";
 import { NextResponse } from "next/server";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+let resend;
+function getResendClient() {
+  if (!resend) {
+    resend = new Resend(process.env.RESEND_API_KEY);
+  }
+  return resend;
+}
 const TO_EMAIL = process.env.ENQUIRY_TO_EMAIL || "ivps786@gmail.com";
 
 function escapeHtml(value) {
@@ -36,7 +42,7 @@ export async function POST(request) {
   }
 
   try {
-    const { error: sendError } = await resend.emails.send({
+    const { error: sendError } = await getResendClient().emails.send({
       from: process.env.RESEND_FROM_EMAIL || "Indo Valley Public School <onboarding@resend.dev>",
       to: TO_EMAIL,
       replyTo: email || undefined,
