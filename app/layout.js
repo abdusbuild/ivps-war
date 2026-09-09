@@ -47,8 +47,8 @@ export const metadata = {
     images: [
       {
         url: "/indo/school-building.jpeg",
-        width: 1016,
-        height: 1270,
+        width: 1280,
+        height: 720,
         alt: "Front elevation of the Indo Valley Public School building",
       },
     ],
