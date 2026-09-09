@@ -57,7 +57,7 @@ export default function Academics() {
       <div className="w-full max-w-(--container-wrap) mx-auto px-[clamp(20px,4vw,40px)]">
         <header className="sec-head sec-head--center">
           <p className="eyebrow reveal" data-reveal="up">The academic journey</p>
-          <h2 className="text-[clamp(30px,4.6vw,54px)] split" data-reveal="split">Twelve years of school, four clear stages</h2>
+          <h1 className="text-[clamp(30px,4.6vw,54px)] split" data-reveal="split">Twelve years of school, four clear stages</h1>
           <p className="text-text-2 text-[clamp(16.5px,1.6vw,19px)] leading-[1.72] mt-5 reveal" data-reveal="up" data-delay="120">
             The curriculum is the sum of every planned experience a school gives a learner —
             objectives, competencies, subjects, teaching practice and assessment. Here is how

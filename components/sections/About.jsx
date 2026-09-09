@@ -29,7 +29,7 @@ export default function About() {
 
         <div className="about__copy">
           <p className="eyebrow reveal" data-reveal="up">About our school</p>
-          <h2 className="text-[clamp(30px,4.6vw,54px)] split" data-reveal="split">A school built around the child, not the timetable</h2>
+          <h1 className="text-[clamp(30px,4.6vw,54px)] split" data-reveal="split">A school built around the child, not the timetable</h1>
           <p className="text-text-2 text-[clamp(16.5px,1.6vw,19px)] leading-[1.72] reveal" data-reveal="up" data-delay="120">
             Education is a lifelong journey, and the first years decide how far a child is
             willing to travel. Our classrooms, laboratories and activity spaces are designed

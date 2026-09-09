@@ -20,7 +20,7 @@ export default function Life() {
         <header className="sec-head sec-head--split">
           <div>
             <p className="eyebrow reveal" data-reveal="up">Life at Indo Valley</p>
-            <h2 className="text-[clamp(30px,4.6vw,54px)] split" data-reveal="split">Photographs, not stock images</h2>
+            <h1 className="text-[clamp(30px,4.6vw,54px)] split" data-reveal="split">Photographs, not stock images</h1>
           </div>
           <div className="filters reveal" data-reveal="up" data-delay="120" role="tablist" aria-label="Gallery filters">
             <button className="filter is-active" data-filter="all" role="tab" aria-selected="true">All</button>

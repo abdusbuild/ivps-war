@@ -9,7 +9,7 @@ export default function Admissions() {
       <div className="w-full max-w-(--container-wrap) mx-auto px-[clamp(20px,4vw,40px)] relative z-2">
         <header className="sec-head sec-head--center sec-head--light">
           <p className="eyebrow eyebrow--light reveal" data-reveal="up">Admissions 2026&ndash;27</p>
-          <h2 className="text-[clamp(30px,4.6vw,54px)] split text-white" data-reveal="split">Four steps, and we will walk you through each one</h2>
+          <h1 className="text-[clamp(30px,4.6vw,54px)] split text-white" data-reveal="split">Four steps, and we will walk you through each one</h1>
         </header>
 
         <ol className="steps">

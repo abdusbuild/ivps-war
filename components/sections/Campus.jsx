@@ -7,7 +7,7 @@ export default function Campus() {
       <div className="w-full max-w-(--container-wrap) mx-auto px-[clamp(20px,4vw,40px)]">
         <header className="sec-head">
           <p className="eyebrow reveal" data-reveal="up">Campus &amp; facilities</p>
-          <h2 className="text-[clamp(30px,4.6vw,54px)] split" data-reveal="split">Spaces designed to keep children learning</h2>
+          <h1 className="text-[clamp(30px,4.6vw,54px)] split" data-reveal="split">Spaces designed to keep children learning</h1>
         </header>
 
         <div className="bento grid grid-cols-3 gap-4.5 [grid-auto-rows:minmax(200px,auto)] max-[1080px]:grid-cols-2 max-[640px]:grid-cols-1">

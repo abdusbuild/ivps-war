@@ -4,7 +4,7 @@
       <div className="w-full max-w-(--container-wrap) mx-auto px-[clamp(20px,4vw,40px)] contact__in grid grid-cols-[1fr_1.05fr] gap-[clamp(34px,5vw,72px)] items-start max-[1080px]:grid-cols-1">
         <div className="contact__info">
           <p className="eyebrow reveal" data-reveal="up">Contact us</p>
-          <h2 className="text-[clamp(30px,4.6vw,54px)] split" data-reveal="split">Come and see the school</h2>
+          <h1 className="text-[clamp(30px,4.6vw,54px)] split" data-reveal="split">Come and see the school</h1>
           <p className="text-text-2 text-[clamp(16.5px,1.6vw,19px)] leading-[1.72] reveal" data-reveal="up" data-delay="120">
             The best way to judge a school is to walk through it on a normal Tuesday.
             Call ahead and we will keep the principal free for twenty minutes.
@@ -70,9 +70,11 @@
             <button type="submit" className="btn btn--gold btn--lg btn--block magnetic mt-1.5" data-cursor="link"><span>Send enquiry</span></button>
             <p className="form__ok flex items-center gap-2.5 mt-4 py-3.5 px-4 rounded-sm bg-[color-mix(in_srgb,var(--success-500)_13%,transparent)] text-[#0A7A6C] dark:text-[#5FE3D0] text-sm font-semibold" id="formOk" hidden>
               <svg className="w-[18px] h-[18px] flex-none" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round"><path d="m4 12 5 5L20 6" /></svg>
-              Thank you — your enquiry has been recorded. Someone from the office will call you.
+              Thank you! Your enquiry has been received — our admissions team will contact you soon.
             </p>
-            <p className="form__demo mt-3.5 text-xs text-muted text-center">Demo form &mdash; submissions are not sent anywhere yet.</p>
+            <p className="form__err flex items-center gap-2.5 mt-4 py-3.5 px-4 rounded-sm bg-[color-mix(in_srgb,var(--danger-500,#dc2626)_13%,transparent)] text-[#B42318] dark:text-[#FDA29B] text-sm font-semibold" id="formErr" hidden>
+              Something went wrong sending your enquiry. Please call us instead, or try again in a moment.
+            </p>
           </form>
         </div>
       </div>

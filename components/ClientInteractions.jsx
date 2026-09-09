@@ -596,6 +596,8 @@ export default function ClientInteractions() {
       var form = $("#enquiryForm");
       if (!form) return;
       var ok = $("#formOk");
+      var err = $("#formErr");
+      var submitBtn = $("button[type=submit]", form);
 
       function fail(field, msg) {
         field.closest(".field").classList.add("is-bad");
@@ -614,7 +616,7 @@ export default function ClientInteractions() {
         e.preventDefault();
         var bad = false;
         var name = $("#f-name"), phone = $("#f-phone"), email = $("#f-email"),
-          town = $("#f-town"), cls = $("#f-class");
+          town = $("#f-town"), cls = $("#f-class"), msg = $("#f-msg");
 
         if (name.value.trim().length < 2) { fail(name, "Please enter the full name."); bad = true; }
         if (!/^[0-9+\-\s()]{10,15}$/.test(phone.value.trim())) { fail(phone, "Enter a valid phone number."); bad = true; }
@@ -627,9 +629,35 @@ export default function ClientInteractions() {
           if (first) first.focus();
           return;
         }
-        ok.hidden = false;
-        form.reset();
-        setTimeout(function () { ok.hidden = true; }, 8000);
+
+        if (err) err.hidden = true;
+        if (submitBtn) submitBtn.disabled = true;
+
+        fetch("/api/enquiry", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            name: name.value.trim(),
+            phone: phone.value.trim(),
+            email: email.value.trim(),
+            town: town.value.trim(),
+            class: cls.value,
+            message: msg ? msg.value.trim() : "",
+          }),
+        })
+          .then(function (res) { return res.json().then(function (data) { return { ok: res.ok, data: data }; }); })
+          .then(function (result) {
+            if (!result.ok) throw new Error((result.data && result.data.error) || "Send failed.");
+            ok.hidden = false;
+            form.reset();
+            setTimeout(function () { ok.hidden = true; }, 8000);
+          })
+          .catch(function () {
+            if (err) err.hidden = false;
+          })
+          .finally(function () {
+            if (submitBtn) submitBtn.disabled = false;
+          });
       });
     })();
 

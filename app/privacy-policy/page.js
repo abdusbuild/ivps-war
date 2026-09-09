@@ -1,9 +1,10 @@
 import PrivacyPolicy from "@/components/sections/PrivacyPolicy";
 
 export const metadata = {
-  title: "Privacy Policy — Indo Valley Public School",
+  title: "Privacy Policy",
   description:
     "How Indo Valley Public School, War (Aurangabad), Bihar, collects and uses information submitted through this website.",
+  alternates: { canonical: "/privacy-policy" },
 };
 
 export default function PrivacyPolicyPage() {
