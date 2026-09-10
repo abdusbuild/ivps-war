@@ -45,6 +45,14 @@ export default function Life() {
               data-cursor="zoom"
             >
               <Image src={s.src} alt={s.alt} width={s.tall ? 900 : 1200} height={s.tall ? 1200 : 900} className={s.tall ? "aspect-[3/4] w-full object-cover" : "aspect-[4/3] w-full object-cover"} />
+              <span className="shot__view" aria-hidden="true">
+                <i>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <circle cx="11" cy="11" r="7" />
+                    <path d="m21 21-4.3-4.3" />
+                  </svg>
+                </i>
+              </span>
               <figcaption><strong className="font-display text-[17px]">{s.title}</strong><span className="text-xs opacity-80">{s.caption}</span></figcaption>
             </figure>
           ))}
