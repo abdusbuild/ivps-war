@@ -169,6 +169,33 @@ export default function ClientInteractions() {
     var root = document.documentElement;
     var cleanups = [];
 
+    /* ── Swipe helper (touch + mouse drag, via Pointer Events) ── */
+    function bindSwipe(el, onSwipe) {
+      if (!el) return function () {};
+      var x0 = null, y0 = null, id = null;
+
+      function down(e) {
+        x0 = e.clientX; y0 = e.clientY; id = e.pointerId;
+        try { el.setPointerCapture(id); } catch (err) {}
+      }
+      function up(e) {
+        if (x0 === null || e.pointerId !== id) return;
+        var dx = e.clientX - x0, dy = e.clientY - y0;
+        x0 = null; y0 = null; id = null;
+        if (Math.abs(dx) > 45 && Math.abs(dx) > Math.abs(dy)) onSwipe(dx < 0 ? 1 : -1);
+      }
+      function cancel() { x0 = null; y0 = null; id = null; }
+
+      el.addEventListener("pointerdown", down);
+      el.addEventListener("pointerup", up);
+      el.addEventListener("pointercancel", cancel);
+      return function () {
+        el.removeEventListener("pointerdown", down);
+        el.removeEventListener("pointerup", up);
+        el.removeEventListener("pointercancel", cancel);
+      };
+    }
+
     /* ── Magnetic buttons ──────────────────────────────────── */
     if (FINE && !REDUCED) {
       $$(".magnetic").forEach(function (el) {
@@ -383,24 +410,14 @@ export default function ClientInteractions() {
       if (prevBtn) prevBtn.addEventListener("click", onPrev);
       if (nextBtn) nextBtn.addEventListener("click", onNext);
 
-      var x0 = null;
-      function onPointerDown(e) { x0 = e.clientX; }
-      function onPointerUp(e) {
-        if (x0 === null) return;
-        var dx = e.clientX - x0;
-        if (Math.abs(dx) > 45) { go(i + (dx < 0 ? 1 : -1)); restart(); }
-        x0 = null;
-      }
-      track.addEventListener("pointerdown", onPointerDown);
-      track.addEventListener("pointerup", onPointerUp);
+      var unbindSwipe = bindSwipe(track, function (dir) { go(i + dir); restart(); });
 
       go(0); restart();
       cleanups.push(function () {
         clearInterval(timer);
         if (prevBtn) prevBtn.removeEventListener("click", onPrev);
         if (nextBtn) nextBtn.removeEventListener("click", onNext);
-        track.removeEventListener("pointerdown", onPointerDown);
-        track.removeEventListener("pointerup", onPointerUp);
+        unbindSwipe();
       });
     })();
 
@@ -573,22 +590,16 @@ export default function ClientInteractions() {
       if (prevBtn) prevBtn.addEventListener("click", onPrev);
       if (nextBtn) nextBtn.addEventListener("click", onNext);
 
-      var x0 = null;
       var vp = $("#voicesViewport");
-      function onPointerDown(e) { x0 = e.clientX; }
-      function onPointerUp(e) {
-        if (x0 === null) return;
-        var dx = e.clientX - x0;
-        if (Math.abs(dx) > 45) { go(i + (dx < 0 ? 1 : -1)); restart(); }
-        x0 = null;
-      }
-      if (vp) {
-        vp.addEventListener("pointerdown", onPointerDown);
-        vp.addEventListener("pointerup", onPointerUp);
-      }
+      var unbindSwipe = bindSwipe(vp, function (dir) { go(i + dir); restart(); });
 
       go(0); restart();
-      cleanups.push(function () { clearInterval(timer); });
+      cleanups.push(function () {
+        clearInterval(timer);
+        if (prevBtn) prevBtn.removeEventListener("click", onPrev);
+        if (nextBtn) nextBtn.removeEventListener("click", onNext);
+        unbindSwipe();
+      });
     })();
 
     /* ── Enquiry form ──────────────────────────────────────── */
