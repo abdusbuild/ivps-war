@@ -1,5 +1,6 @@
 import Admissions from "@/components/sections/Admissions";
 import AdmissionsInfo from "@/components/sections/AdmissionsInfo";
+import FeeStructure from "@/components/sections/FeeStructure";
 
 export const metadata = {
   title: "Admissions",
@@ -13,6 +14,7 @@ export default function AdmissionsPage() {
     <main id="main">
       <Admissions />
       <AdmissionsInfo />
+      <FeeStructure />
     </main>
   );
 }

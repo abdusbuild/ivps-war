@@ -1,19 +1,5 @@
 import LegalLayout from "./LegalLayout";
 
-const TOC = [
-  { id: "overview", label: "Overview" },
-  { id: "information-we-collect", label: "Information we collect" },
-  { id: "how-we-use-it", label: "How we use it" },
-  { id: "childrens-data", label: "Children's data" },
-  { id: "cookies", label: "Cookies & analytics" },
-  { id: "third-parties", label: "Third-party services" },
-  { id: "security", label: "Data storage & security" },
-  { id: "retention", label: "Data retention" },
-  { id: "rights", label: "Your rights & grievances" },
-  { id: "changes", label: "Changes to this policy" },
-  { id: "contact", label: "Contact us" },
-];
-
 export default function PrivacyPolicy() {
   return (
     <LegalLayout
@@ -21,7 +7,6 @@ export default function PrivacyPolicy() {
       title="Privacy Policy"
       lede="This page explains what information Indo Valley Public School collects through this website, why we collect it, and how it is handled."
       updated="7 September 2026"
-      toc={TOC}
     >
       <section id="overview">
         <h2>1. Overview</h2>

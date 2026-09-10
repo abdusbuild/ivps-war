@@ -395,8 +395,6 @@ html[data-theme="dark"] {
     opacity: 0; transform: translateY(16px);
   }
   .mobile-menu.is-open .mobile-menu__foot { animation: mm-in 0.6s var(--ease-ivps) forwards; animation-delay: 0.44s; }
-  .mobile-menu__theme { display: flex; align-items: center; justify-content: space-between; padding-bottom: 14px; border-bottom: 1px solid var(--line-2); }
-  .mobile-menu__theme > span { font-size: 13px; font-weight: 700; color: var(--text-2); }
   .mobile-menu__cta { width: 100%; justify-content: center; }
   .mobile-menu__contacts { display: grid; gap: 10px; }
   .mobile-menu__contacts a { @apply flex items-center gap-3 font-semibold text-text-2 transition-colors; font-size: 14px; }
@@ -455,8 +453,7 @@ html[data-theme="dark"] {
   html[data-theme="dark"] .stat strong { background: linear-gradient(135deg, var(--gold-400), #fff); -webkit-background-clip: text; background-clip: text; }
 
   /* ── Tick (about points) ────────────────────────────────── */
-  .tick { position: relative; background: linear-gradient(135deg, var(--gold-500), var(--gold-400)); }
-  .tick::after { content: ""; position: absolute; left: 8px; top: 7px; width: 6px; height: 11px; border: 2.4px solid var(--brand-900); border-top: 0; border-left: 0; transform: rotate(42deg); }
+  .tick { display: grid; place-items: center; background: linear-gradient(135deg, var(--gold-500), var(--gold-400)); }
 
   /* ── Pillars / bento hover glow (mouse-follow via --mx/--my set in JS) ── */
   .pillar, .bento__card {
@@ -546,6 +543,10 @@ html[data-theme="dark"] {
   .shot figcaption { position: absolute; left: 0; right: 0; bottom: 0; z-index: 2; padding: 18px 20px; color: #fff; display: grid; gap: 2px; transform: translateY(8px); opacity: 0; transition: transform 0.45s var(--ease-ivps), opacity 0.4s; }
   .shot:hover figcaption { transform: none; opacity: 1; }
   .shot.is-hidden { display: none; }
+  @media (hover: none) {
+    .shot::after { opacity: 0.85; }
+    .shot figcaption { transform: none; opacity: 1; }
+  }
   .filters { display: flex; gap: 8px; flex-wrap: wrap; }
   .filter {
     @apply rounded-full bg-transparent font-bold cursor-pointer text-muted;
@@ -706,20 +707,13 @@ html[data-theme="dark"] {
   .form__ok { animation: fade-up 0.5s var(--ease-ivps); }
 
   /* ── Legal / policy pages ───────────────────────────────── */
-  .legal__head { max-width: 760px; }
+  .legal__head { max-width: 760px; margin-inline: auto; text-align: center; }
   .legal__updated {
     @apply inline-flex items-center gap-2 rounded-full font-bold text-gold-700 dark:text-gold-400;
     margin: 16px 0 0; padding: 7px 14px 7px 12px; background: color-mix(in srgb, var(--gold-500) 10%, transparent); font-size: 12.5px;
   }
   .legal__updated svg { flex: 0 0 auto; }
-  .legal__in { display: grid; grid-template-columns: 250px 1fr; gap: clamp(28px, 5vw, 64px); align-items: start; margin-top: clamp(40px, 5vw, 64px); }
-  .legal__toc {
-    @apply sticky grid rounded-lg bg-card border border-line-2 shadow-card-sm;
-    top: calc(var(--nav-h) + 24px); gap: 2px; padding: 18px;
-  }
-  .legal__toc span { @apply font-extrabold uppercase text-muted; font-size: 11px; letter-spacing: 0.12em; margin: 2px 0 8px 10px; }
-  .legal__toc a { @apply font-semibold text-text-2 rounded-[9px]; padding: 9px 10px; font-size: 13.5px; transition: background 0.25s var(--ease-ivps), color 0.25s var(--ease-ivps); }
-  .legal__toc a:hover { background: color-mix(in srgb, var(--gold-500) 10%, transparent); color: var(--text); }
+  .legal__in { margin-top: clamp(40px, 5vw, 64px); }
   .legal__note {
     @apply flex rounded-md;
     gap: 12px; padding: 16px 18px; border: 1px dashed var(--line); background: color-mix(in srgb, var(--gold-500) 6%, transparent); font-size: 13.8px; color: var(--text-2); line-height: 1.6;
@@ -867,9 +861,6 @@ html[data-theme="dark"] {
     .steps { grid-template-columns: repeat(2, 1fr); }
     .bento__card--wide, .bento__card--tall { grid-column: span 2; grid-row: span 1; }
     .gallery { columns: 2; }
-    .legal__toc { position: static; display: flex; flex-wrap: nowrap; overflow-x: auto; gap: 8px; padding: 12px; }
-    .legal__toc span { display: none; }
-    .legal__toc a { white-space: nowrap; flex: 0 0 auto; }
     .leaders__grid { grid-template-columns: 1fr; }
     .welcome-modal__card { grid-template-columns: 1fr; grid-template-rows: 150px auto; max-height: 92vh; }
     .welcome-modal__media { min-height: 150px; }
@@ -891,9 +882,9 @@ html[data-theme="dark"] {
     .stage__dot { left: -28px; }
     .stage__range { display: none; }
     .fab span { display: none; }
-    .fab { padding: 14px; left: 16px; bottom: 16px; }
-    .enquire-panel { left: 16px; bottom: 78px; }
-    .totop { right: 16px; bottom: 16px; }
+    .fab { padding: 14px; left: 16px; bottom: calc(16px + env(safe-area-inset-bottom)); }
+    .enquire-panel { left: 16px; bottom: calc(78px + env(safe-area-inset-bottom)); }
+    .totop { right: 16px; bottom: calc(16px + env(safe-area-inset-bottom)); }
     .hero__bars { display: none; }
     .hero__slider-nav { bottom: 18px; gap: 8px; }
     .hero__arrow { width: 38px; height: 38px; }

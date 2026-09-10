@@ -47,15 +47,21 @@ export default function About() {
 
           <ul className="about__points list-none my-7 mb-[30px] p-0 grid gap-[18px]">
             <li className="reveal flex gap-3.5" data-reveal="up" data-delay="240">
-              <span className="tick w-6.5 h-6.5 rounded-[9px] mt-0.5" aria-hidden="true"></span>
+              <span className="tick w-6.5 h-6.5 rounded-[9px] mt-0.5 flex-none" aria-hidden="true">
+                <svg className="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="var(--brand-900)" strokeWidth="3.2" strokeLinecap="round" strokeLinejoin="round"><path d="m5 12.5 4.5 4.5L19 7" /></svg>
+              </span>
               <div><strong className="block font-display text-[17.5px] mb-0.5">Independent thinkers</strong><p className="text-[14.5px] text-muted m-0 leading-[1.55]">Constructivist teaching over rote learning, with hands-on work in every subject.</p></div>
             </li>
             <li className="reveal flex gap-3.5" data-reveal="up" data-delay="300">
-              <span className="tick w-6.5 h-6.5 rounded-[9px] mt-0.5" aria-hidden="true"></span>
+              <span className="tick w-6.5 h-6.5 rounded-[9px] mt-0.5 flex-none" aria-hidden="true">
+                <svg className="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="var(--brand-900)" strokeWidth="3.2" strokeLinecap="round" strokeLinejoin="round"><path d="m5 12.5 4.5 4.5L19 7" /></svg>
+              </span>
               <div><strong className="block font-display text-[17.5px] mb-0.5">Support that finds the child</strong><p className="text-[14.5px] text-muted m-0 leading-[1.55]">Tutorial and remedial sessions, in school and after hours, planned per learner.</p></div>
             </li>
             <li className="reveal flex gap-3.5" data-reveal="up" data-delay="360">
-              <span className="tick w-6.5 h-6.5 rounded-[9px] mt-0.5" aria-hidden="true"></span>
+              <span className="tick w-6.5 h-6.5 rounded-[9px] mt-0.5 flex-none" aria-hidden="true">
+                <svg className="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="var(--brand-900)" strokeWidth="3.2" strokeLinecap="round" strokeLinejoin="round"><path d="m5 12.5 4.5 4.5L19 7" /></svg>
+              </span>
               <div><strong className="block font-display text-[17.5px] mb-0.5">Confidence on and off the stage</strong><p className="text-[14.5px] text-muted m-0 leading-[1.55]">Faculty guide students in the classroom, the laboratory and the auditorium alike.</p></div>
             </li>
           </ul>

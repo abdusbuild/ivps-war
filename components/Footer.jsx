@@ -32,6 +32,7 @@ export default function Footer() {
             <div className="footer-acc__body grid gap-[11px]">
               <Link className={COL_LINK_CLASS} href="/about">About us</Link>
               <Link className={COL_LINK_CLASS} href="/academics">Academics</Link>
+              <Link className={COL_LINK_CLASS} href="/campus">Campus &amp; facilities</Link>
               <Link className={COL_LINK_CLASS} href="/life">School life</Link>
               <Link className={COL_LINK_CLASS} href="/faculty">Faculty</Link>
               <Link className={COL_LINK_CLASS} href="/#news">News &amp; events</Link>
@@ -42,7 +43,7 @@ export default function Footer() {
             <summary className="font-body uppercase text-gold-400 font-extrabold text-xs tracking-[0.15em]">For parents<i></i></summary>
             <div className="footer-acc__body grid gap-[11px]">
               <Link className={COL_LINK_CLASS} href="/admissions">Admissions</Link>
-              <Link className={COL_LINK_CLASS} href="/#faq">Fees &amp; rules</Link>
+              <Link className={COL_LINK_CLASS} href="/admissions#fee-structure">Fees &amp; rules</Link>
               <Link className={COL_LINK_CLASS} href="/contact">Transport routes</Link>
               <Link className={COL_LINK_CLASS} href="/about#leaders">Leadership</Link>
               <Link className={COL_LINK_CLASS} href="/contact">Contact the office</Link>

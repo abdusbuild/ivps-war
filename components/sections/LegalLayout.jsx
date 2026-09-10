@@ -1,4 +1,4 @@
-﻿export default function LegalLayout({ eyebrow, title, lede, updated, toc = [], children }) {
+﻿export default function LegalLayout({ eyebrow, title, lede, updated, children }) {
   return (
     <section className="py-[clamp(48px,6vw,90px)] relative">
       <div className="w-full max-w-(--container-wrap) mx-auto px-[clamp(20px,4vw,40px)]">
@@ -24,18 +24,7 @@
         </header>
 
         <div className="legal__in">
-          {toc.length > 0 && (
-            <nav className="legal__toc reveal" data-reveal="up" aria-label="Sections on this page">
-              <span>On this page</span>
-              {toc.map((t) => (
-                <a key={t.id} href={`#${t.id}`}>
-                  {t.label}
-                </a>
-              ))}
-            </nav>
-          )}
-
-          <div className="legal__body reveal max-w-[74ch]" data-reveal="up" data-delay="120">
+          <div className="legal__body reveal max-w-[74ch] mx-auto" data-reveal="up" data-delay="120">
             {children}
           </div>
         </div>

@@ -1,15 +1,6 @@
 import Link from "next/link";
 import LegalLayout from "./LegalLayout";
 
-const TOC = [
-  { id: "general", label: "A. General information" },
-  { id: "documents", label: "B. Documents & undertakings" },
-  { id: "academics", label: "C. Academic session" },
-  { id: "staff", label: "D. Staff details" },
-  { id: "infrastructure", label: "E. School infrastructure" },
-  { id: "fees", label: "F. Fee structure" },
-];
-
 const Pending = ({ children = "To be updated by the school administration" }) => (
   <em className="legal__pending">{children}</em>
 );
@@ -21,7 +12,6 @@ export default function PublicDisclosure() {
       title="Public Disclosure"
       lede="As a CBSE-affiliated school, Indo Valley Public School publishes the information below in line with the Board's Mandatory Public Disclosure requirements."
       updated="7 September 2026"
-      toc={TOC}
     >
       <section id="general">
         <h2>A. General information</h2>

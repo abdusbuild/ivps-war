@@ -1,20 +1,6 @@
 import Link from "next/link";
 import LegalLayout from "./LegalLayout";
 
-const TOC = [
-  { id: "acceptance", label: "Acceptance of terms" },
-  { id: "use-of-site", label: "Use of this website" },
-  { id: "accuracy", label: "Accuracy of information" },
-  { id: "admissions", label: "Admissions & fees" },
-  { id: "ip", label: "Intellectual property" },
-  { id: "submissions", label: "Content you submit" },
-  { id: "links", label: "Third-party links" },
-  { id: "liability", label: "Limitation of liability" },
-  { id: "law", label: "Governing law" },
-  { id: "changes", label: "Changes to these terms" },
-  { id: "contact", label: "Contact us" },
-];
-
 export default function TermsConditions() {
   return (
     <LegalLayout
@@ -22,7 +8,6 @@ export default function TermsConditions() {
       title="Terms &amp; Conditions"
       lede="These terms govern your use of this website. By browsing this site or submitting an enquiry through it, you agree to the terms below."
       updated="7 September 2026"
-      toc={TOC}
     >
       <section id="acceptance">
         <h2>1. Acceptance of terms</h2>
