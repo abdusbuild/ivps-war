@@ -805,7 +805,9 @@ html[data-theme="dark"] {
   .lightbox[hidden] { display: none !important; }
   .lightbox__fig img, .lightbox__fig video { max-height: 78vh; width: auto; box-shadow: 0 40px 100px rgba(0, 0, 0, 0.7); animation: lb-in 0.5s var(--ease-ivps); }
   .lightbox__close, .lightbox__nav { transition: all 0.3s var(--ease-ivps); }
+  .lightbox__nav { border-color: color-mix(in srgb, var(--gold-400) 45%, transparent); }
   .lightbox__close:hover, .lightbox__nav:hover { background: var(--gold-500); color: var(--brand-900); border-color: transparent; transform: scale(1.08); }
+  .lightbox__fig { touch-action: pan-y; }
 
   /* ── Welcome modal ──────────────────────────────────────── */
   .welcome-modal { @apply fixed inset-0 z-9995 grid place-items-center; padding: 24px; }

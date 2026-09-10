@@ -549,6 +549,9 @@ export default function ClientInteractions() {
       lb.addEventListener("click", onBackdropClick);
       document.addEventListener("keydown", onKeydown);
 
+      var lbFig = $(".lightbox__fig", lb);
+      var unbindLbSwipe = bindSwipe(lbFig, function (dir) { show(idx + dir); });
+
       cleanups.push(function () {
         shotHandlers.forEach(function (h) { h.fig.removeEventListener("click", h.onClick); });
         if (closeBtn) closeBtn.removeEventListener("click", close);
@@ -556,6 +559,7 @@ export default function ClientInteractions() {
         if (nextBtn) nextBtn.removeEventListener("click", onNext);
         lb.removeEventListener("click", onBackdropClick);
         document.removeEventListener("keydown", onKeydown);
+        unbindLbSwipe();
       });
     })();
 
