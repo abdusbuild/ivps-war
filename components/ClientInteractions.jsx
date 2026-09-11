@@ -362,21 +362,26 @@ export default function ClientInteractions() {
       });
     })();
 
-    /* ── Hero image slider ─────────────────────────────────── */
+    /* ── Hero image slider (vertical chunks fall from the top) ── */
     (function () {
-      var track = $("#heroTrack");
-      if (!track) return;
-      var slides = $$(".hero__slide", track);
+      var stage = $("#heroStage");
+      var chunksWrap = $("#heroChunks");
+      if (!stage || !chunksWrap) return;
+      var slides = $$(".hero__slide", stage);
       var bars = $$("#heroBars i");
-      var countEl = $("#heroCount");
       var prevBtn = $("#heroPrev"), nextBtn = $("#heroNext");
-      var i = 0, timer = null, DUR = 6000;
+      var i = 0, timer = null, DUR = 6000, animTimer = null, animating = false;
+      var COLS = window.innerWidth < 640 ? 6 : 10;
+      var COL_DELAY = 55, CHUNK_DUR = 900;
 
-      function pad(n) { return n < 10 ? "0" + n : "" + n; }
+      function stripWidths(n) {
+        var raw = [];
+        for (var k = 0; k < n; k++) raw.push(0.55 + Math.random() * 1.3);
+        var sum = raw.reduce(function (a, b) { return a + b; }, 0);
+        return raw.map(function (w) { return (w / sum) * 100; });
+      }
 
-      function render() {
-        track.style.transform = "translateX(" + -i * 100 + "%)";
-        if (countEl) countEl.textContent = pad(i + 1) + " / " + pad(slides.length);
+      function resetBars() {
         bars.forEach(function (bar, k) {
           bar.style.transition = "none";
           bar.style.width = k < i ? "100%" : "0%";
@@ -394,11 +399,58 @@ export default function ClientInteractions() {
         });
       }
 
-      function go(n) {
-        i = (n + slides.length) % slides.length;
-        render();
+      function applyActive(n) {
+        slides.forEach(function (s, k) { s.classList.toggle("is-active", k === n); });
+        resetBars();
         playBar();
       }
+
+      function shatterTo(n) {
+        if (n === i) return;
+        if (animating) { clearTimeout(animTimer); chunksWrap.innerHTML = ""; animating = false; }
+        if (REDUCED) { i = n; applyActive(i); return; }
+
+        animating = true;
+        var next = slides[n];
+        var src = next.getAttribute("data-src");
+        var bgPos = next.getAttribute("data-bg-pos") || "center";
+        chunksWrap.innerHTML = "";
+
+        var widths = stripWidths(COLS);
+        var frag = document.createDocumentFragment();
+        var chunks = [];
+        var left = 0;
+        for (var c = 0; c < COLS; c++) {
+          var w = widths[c];
+          var right = Math.max(0, 100 - (left + w));
+          var div = document.createElement("div");
+          div.className = "hero__chunk";
+          div.style.backgroundImage = "url(" + src + ")";
+          div.style.backgroundPosition = bgPos;
+          div.style.clipPath = "inset(0% " + right + "% 0% " + left + "%)";
+          div.style.transitionDelay = (c * COL_DELAY + Math.random() * 50).toFixed(0) + "ms";
+          frag.appendChild(div);
+          chunks.push(div);
+          left += w;
+        }
+        chunksWrap.appendChild(frag);
+        void chunksWrap.offsetWidth;
+        requestAnimationFrame(function () {
+          requestAnimationFrame(function () {
+            chunks.forEach(function (ch) { ch.classList.add("is-in"); });
+          });
+        });
+
+        var totalDur = (COLS - 1) * COL_DELAY + 50 + CHUNK_DUR;
+        animTimer = setTimeout(function () {
+          i = n;
+          applyActive(i);
+          chunksWrap.innerHTML = "";
+          animating = false;
+        }, totalDur);
+      }
+
+      function go(n) { shatterTo((n + slides.length) % slides.length); }
 
       function restart() {
         clearInterval(timer);
@@ -410,14 +462,16 @@ export default function ClientInteractions() {
       if (prevBtn) prevBtn.addEventListener("click", onPrev);
       if (nextBtn) nextBtn.addEventListener("click", onNext);
 
-      var unbindSwipe = bindSwipe(track, function (dir) { go(i + dir); restart(); });
+      var unbindSwipe = bindSwipe(stage, function (dir) { go(i + dir); restart(); });
 
-      go(0); restart();
+      applyActive(0); restart();
       cleanups.push(function () {
         clearInterval(timer);
+        clearTimeout(animTimer);
         if (prevBtn) prevBtn.removeEventListener("click", onPrev);
         if (nextBtn) nextBtn.removeEventListener("click", onNext);
         unbindSwipe();
+        chunksWrap.innerHTML = "";
       });
     })();
 

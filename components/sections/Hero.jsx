@@ -2,11 +2,11 @@ import Image from "next/image";
 import Link from "next/link";
 
 const HERO_SLIDES = [
-  { src: "/indo/school-building.jpeg", alt: "Indo Valley Public School campus building", pos: "object-[center_38%]" },
-  { src: "/indo/classroom1.jpeg", alt: "Students learning in a classroom", pos: "object-[center_32%]" },
-  { src: "/indo/computerLab.jpeg", alt: "Students in the computer lab", pos: "object-center" },
-  { src: "/indo/hall.jpeg", alt: "School assembly in the main hall", pos: "object-[center_30%]" },
-  { src: "/indo/republicDay.jpeg", alt: "Independence Day celebration at school", pos: "object-[center_28%]" },
+  { src: "/indo/school-building.jpeg", alt: "Indo Valley Public School campus building", pos: "object-[center_38%]", bgPos: "center 38%" },
+  { src: "/indo/classroom1.jpeg", alt: "Students learning in a classroom", pos: "object-[center_32%]", bgPos: "center 32%" },
+  { src: "/indo/computerLab.jpeg", alt: "Students in the computer lab", pos: "object-center", bgPos: "center" },
+  { src: "/indo/hall.jpeg", alt: "School assembly in the main hall", pos: "object-[center_30%]", bgPos: "center 30%" },
+  { src: "/indo/republicDay.jpeg", alt: "Independence Day celebration at school", pos: "object-[center_28%]", bgPos: "center 28%" },
 ];
 
 export default function Hero() {
@@ -16,9 +16,14 @@ export default function Hero() {
       id="hero"
     >
       <div className="hero__photo absolute inset-0 z-0 overflow-hidden" aria-hidden="true">
-        <div className="hero__track" id="heroTrack">
+        <div className="hero__stage" id="heroStage">
           {HERO_SLIDES.map((s, i) => (
-            <div className="hero__slide" key={s.src}>
+            <div
+              className={"hero__slide" + (i === 0 ? " is-active" : "")}
+              key={s.src}
+              data-src={s.src}
+              data-bg-pos={s.bgPos}
+            >
               <Image
                 src={s.src}
                 alt={s.alt}
@@ -30,6 +35,7 @@ export default function Hero() {
             </div>
           ))}
         </div>
+        <div className="hero__chunks" id="heroChunks"></div>
       </div>
       <div
         className="hero__scrim absolute inset-0 z-1 pointer-events-none [background:linear-gradient(100deg,rgba(5,14,32,.95)_0%,rgba(5,14,32,.84)_34%,rgba(5,14,32,.46)_64%,rgba(5,14,32,.16)_100%),linear-gradient(0deg,rgba(5,14,32,.6)_0%,rgba(5,14,32,0)_38%)]"
