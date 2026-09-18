@@ -21,7 +21,7 @@
             </li>
             <li className="reveal flex gap-4" data-reveal="up" data-delay="300">
               <span className="ci grid place-items-center w-11 h-11 rounded-[14px] bg-[color-mix(in_srgb,var(--brand-500)_10%,transparent)] text-brand-600 dark:text-gold-400"><svg className="w-[21px] h-[21px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="4" width="20" height="16" rx="2" /><path d="m2 7 10 6 10-6" /></svg></span>
-              <div><strong className="block font-display text-[16.5px] mb-0.5">Email</strong><p className="text-[14.5px] text-muted m-0 leading-[1.55]"><a className="transition-colors duration-300 hover:text-gold-600" href="mailto:ivps786@gmail.com">ivps786@gmail.com</a></p></div>
+              <div><strong className="block font-display text-[16.5px] mb-0.5">Email</strong><p className="text-[14.5px] text-muted m-0 leading-[1.55]"><a className="transition-colors duration-300 hover:text-gold-600" href="mailto:info@indovalleypublicschool.in">info@indovalleypublicschool.in</a></p></div>
             </li>
             <li className="reveal flex gap-4" data-reveal="up" data-delay="360">
               <span className="ci grid place-items-center w-11 h-11 rounded-[14px] bg-[color-mix(in_srgb,var(--brand-500)_10%,transparent)] text-brand-600 dark:text-gold-400"><svg className="w-[21px] h-[21px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="9" /><path d="M12 7v5l3 2" /></svg></span>

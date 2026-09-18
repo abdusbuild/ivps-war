@@ -131,7 +131,7 @@ export default function PrivacyPolicy() {
           <br />
           Phone: <a href="tel:+918002730317">8002 730 317</a> / <a href="tel:+919711333779">9711 333 779</a>
           <br />
-          Email: <a href="mailto:ivps786@gmail.com">ivps786@gmail.com</a>
+          Email: <a href="mailto:info@indovalleypublicschool.in">info@indovalleypublicschool.in</a>
         </p>
       </section>
     </LegalLayout>

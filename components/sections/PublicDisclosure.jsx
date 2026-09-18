@@ -21,7 +21,7 @@ export default function PublicDisclosure() {
               <tr><th>School name</th><td>Indo Valley Public School</td></tr>
               <tr><th>Complete address</th><td>Near DBGB Bank, War, Aurangabad, Bihar &ndash; 824103</td></tr>
               <tr><th>Principal name</th><td>Mr. Dhananjay Pandit</td></tr>
-              <tr><th>School email</th><td><a href="mailto:ivps786@gmail.com">ivps786@gmail.com</a></td></tr>
+              <tr><th>School email</th><td><a href="mailto:info@indovalleypublicschool.in">info@indovalleypublicschool.in</a></td></tr>
               <tr><th>School phone</th><td><a href="tel:+918002730317">8002 730 317</a> / <a href="tel:+919711333779">9711 333 779</a></td></tr>
               <tr><th>Managed by</th><td>Indo Valley Foundation Trust</td></tr>
               <tr><th>Year of establishment</th><td><Pending /></td></tr>

@@ -36,13 +36,13 @@ export default function FloatingActions() {
             </span>
           </a>
 
-          <a className="enquire-opt" href="mailto:ivps786@gmail.com" data-cursor="link">
+          <a className="enquire-opt" href="mailto:info@indovalleypublicschool.in" data-cursor="link">
             <span className="enquire-opt__icon enquire-opt__icon--mail">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round"><path d="M4 5h16a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1Z" /><path d="m3.5 6 8.5 7 8.5-7" /></svg>
             </span>
             <span className="enquire-opt__copy">
               <strong>Email Us</strong>
-              <small>ivps786@gmail.com</small>
+              <small>info@indovalleypublicschool.in</small>
             </span>
           </a>
         </div>

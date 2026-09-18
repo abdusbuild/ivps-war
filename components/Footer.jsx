@@ -70,9 +70,9 @@ export default function Footer() {
               <svg className="w-[15px] h-[15px] flex-none opacity-75 transition-opacity duration-300 group-hover:opacity-100" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.5 2.1L8 10a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.9.3 1.9.6 2.9.7a2 2 0 0 1 1.7 2z" /></svg>
               9711 333 779
             </a>
-            <a href="mailto:ivps786@gmail.com" className={CONTACT_LINK_CLASS}>
+            <a href="mailto:info@indovalleypublicschool.in" className={CONTACT_LINK_CLASS}>
               <svg className="w-[15px] h-[15px] flex-none opacity-75 transition-opacity duration-300 group-hover:opacity-100" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><rect x="2.5" y="4.5" width="19" height="15" rx="2.5" /><path d="m3 6 9 6.5L21 6" /></svg>
-              ivps786@gmail.com
+              info@indovalleypublicschool.in
             </a>
           </div>
         </div>

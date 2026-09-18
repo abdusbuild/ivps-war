@@ -1,5 +1,5 @@
-import { Resend } from "resend";
 import { NextResponse } from "next/server";
+import { Resend } from "resend";
 
 let resend;
 function getResendClient() {
@@ -8,7 +8,7 @@ function getResendClient() {
   }
   return resend;
 }
-const TO_EMAIL = process.env.ENQUIRY_TO_EMAIL || "ivps786@gmail.com";
+const TO_EMAIL = process.env.ENQUIRY_TO_EMAIL || "info@indovalleypublicschool.in";
 
 function escapeHtml(value) {
   return String(value)
